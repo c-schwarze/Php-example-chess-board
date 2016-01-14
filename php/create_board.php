@@ -19,7 +19,6 @@ for( $i = 0; $i < 8; $i++ ){
 	}
 	$color = ($color + 1)%2;
 }
-Twig_Autoloader::register();
 
 $loader = new Twig_Loader_Filesystem('/Users/ces55739/Desktop/Php-example-chess-board/twig/');
 $twig = new Twig_Environment($loader);
