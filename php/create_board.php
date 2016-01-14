@@ -2,17 +2,22 @@
 require_once '/Users/ces55739/Desktop/Php-example-chess-board/vendor/autoload.php';
 
 $color_array = array();
-$color = 'white';
+$color = 0;
 
 for( $i = 0; $i < 8; $i++ ){
 	$color_array[$i] = array();
 	for( $j = 0; $j < 8; $j++ ){
-		array_push($color_array[$i], $color);
-		if( $color == 'white')
-			$color = 'black';
-		else
-			$color = 'white';
+		if( $color == 0){
+			array_push($color_array[$i], 'white');
+			$color = 1;
+		} else{
+			array_push($color_array[$i], 'black');
+			$color = 0;
+		}
+
+			
 	}
+	$color = ($color + 1)%2;
 }
 Twig_Autoloader::register();
 
