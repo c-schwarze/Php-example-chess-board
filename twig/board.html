@@ -1,12 +1,37 @@
 <html>
-<head></head>
+<head>
+	<style>
+        div{
+            width: 30px;
+            height: 30px;
+        }
+        .black{
+            background-color: black;
+        }
+        .white{
+            background-color: white;
+        }
+        table{
+            width: 270px;
+            border: 1;
+        }
+        td{
+        	width: 30px;
+        	height: 30px;
+        }
+    </style>
+</head>
 <body>
 
-<table width='270px' border='1'>
+<table>
 	{% for row in color_array %}
 		<tr>
 			{% for color in row %}
-				<td width='30px' height='30px' style='background-color:{{color}}'></td>
+				{% if color == 1 %}
+					<td class='white'></td>
+				{% else %}
+					<td class='black'></td>
+				{% endif %}
 			{% endfor %}
 		</tr>
 	{% endfor %}
