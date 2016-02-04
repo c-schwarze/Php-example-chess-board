@@ -27,7 +27,11 @@
 	{% for row in color_array %}
 		<tr>
 			{% for color in row %}
-				<td class='{{color}}'></td>
+				{% if color == 1 %}
+ 					<td class='white'></td>
+ 				{% else %}
+ 					<td class='black'></td>
+ 				{% endif %}
 			{% endfor %}
 		</tr>
 	{% endfor %}
